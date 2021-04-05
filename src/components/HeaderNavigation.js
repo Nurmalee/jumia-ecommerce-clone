@@ -56,6 +56,7 @@ const Navbar = styled.nav`
     height: 80px;   
     display: flex;
     align-items: center;
+    padding: 0 10px;
 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 100;
@@ -83,6 +84,7 @@ const NavbarSearch = styled.div`
         border-radius: 4px;
         margin-right: 10px;
         height: 40px;
+        padding: 0 5px;
 
         > input {
             border: none;
