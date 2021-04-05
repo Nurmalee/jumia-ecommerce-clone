@@ -63,6 +63,7 @@ const Navbar = styled.nav`
 
     > img {
         height: 30px;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 1200px) {
