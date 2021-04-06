@@ -3,6 +3,18 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import LocalAtmIcon from '@material-ui/icons/LocalAtm';
 
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import PhoneAndroidOutlinedIcon from '@material-ui/icons/PhoneAndroidOutlined';
+import ComputerOutlinedIcon from '@material-ui/icons/ComputerOutlined';
+import SportsEsportsOutlinedIcon from '@material-ui/icons/SportsEsportsOutlined';
+import DirectionsCarOutlinedIcon from '@material-ui/icons/DirectionsCarOutlined';
+import ChildCareOutlinedIcon from '@material-ui/icons/ChildCareOutlined';
+import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
+import FitnessCenterOutlinedIcon from '@material-ui/icons/FitnessCenterOutlined';
+import LocalHospitalOutlinedIcon from '@material-ui/icons/LocalHospitalOutlined';
+import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
+import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+
 export const userSubmenu = [
     {
         name: "account",
@@ -33,27 +45,27 @@ export const helpSubmenu = [
 export const sideNavMenu = [
     {
         name: "supermarket",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: StorefrontOutlinedIcon,
     },
     {
         name: "health & beauty",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: LocalHospitalOutlinedIcon,
     },
     {
         name: "home & office",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: HomeOutlinedIcon,
     },
     {
         name: "phones & tablets",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: PhoneAndroidOutlinedIcon,
     },
     {
         name: "computing",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: ComputerOutlinedIcon,
     },
     {
         name: "electronics",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: EmojiObjectsOutlinedIcon,
     },
     {
         name: "fashion",
@@ -61,27 +73,27 @@ export const sideNavMenu = [
     },
     {
         name: "baby products",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: ChildCareOutlinedIcon,
     },
     {
         name: "gaming",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: SportsEsportsOutlinedIcon,
     },
     {
         name: "sporting goods",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: FitnessCenterOutlinedIcon,
     },
     {
         name: "automobile",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: DirectionsCarOutlinedIcon,
     },
     {
         name: "other categories",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: ArrowDropDownCircleOutlinedIcon,
     }
 ]
 
 export const bannerShuffle = [
     "https://ng.jumia.is/cms/Homepage/2021/w14/Artboard_1_copy_2.jpg",
-    
+
 ]

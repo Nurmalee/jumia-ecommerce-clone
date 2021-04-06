@@ -20,4 +20,8 @@ const BodyContainer = styled.main`
     width: 1200px;
     /* border: 1px solid; */
     display: flex;
+
+    @media screen and (max-width: 1200px) {
+        width: 1000px;
+    }
 `

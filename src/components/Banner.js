@@ -41,6 +41,14 @@ const BannerContainer = styled.div`
             width: 100%;
             border-radius: 5px;
         }
+        
+        @media screen and (max-width: 1200px) {
+            flex: 1;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        flex: 0.78;
     }
 `
 
@@ -59,5 +67,9 @@ const SideBanner = styled.aside`
         &:nth-of-type(1) {
             margin-bottom: calc(0.04*400px);
         }
+    }
+
+    @media screen and (max-width: 1200px) {
+        display: none;
     }
 `

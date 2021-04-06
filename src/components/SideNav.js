@@ -55,4 +55,8 @@ const SideNavList = styled.ul`
             margin-left: 3px;
         }
     }
+
+    @media screen and (max-width: 1200px) {
+        flex: 0.22;
+    }
 `
