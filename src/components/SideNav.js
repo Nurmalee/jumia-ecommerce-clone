@@ -30,7 +30,7 @@ const SideNavList = styled.ul`
     height: 400px;
 
     &:hover {
-        box-shadow: 0 0 7px #ddd;
+        box-shadow: 0 0 7px #AAA;
     }
 
     > li {
