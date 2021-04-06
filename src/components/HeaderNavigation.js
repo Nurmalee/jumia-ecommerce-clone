@@ -190,6 +190,7 @@ const NavbarRight = styled.ul`
         border-radius: 2px;
         color: #444;
         position: relative;
+        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 
         /* border: 1px solid; */
 

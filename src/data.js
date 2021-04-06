@@ -22,4 +22,66 @@ export const userSubmenu = [
     }
 ]
 
-export const helpSubmenu = ["help center", "place & track order", "order cancellation", "returns & refunds", "payment & jumia account"]
+export const helpSubmenu = [
+    "help center", 
+    "place & track order", 
+    "order cancellation", 
+    "returns & refunds", 
+    "payment & jumia account"
+]
+
+export const sideNavMenu = [
+    {
+        name: "supermarket",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "health & beauty",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "home & office",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "phones & tablets",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "computing",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "electronics",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "fashion",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "baby products",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "gaming",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "sporting goods",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "automobile",
+        Icon: PersonOutlineOutlinedIcon,
+    },
+    {
+        name: "other categories",
+        Icon: PersonOutlineOutlinedIcon,
+    }
+]
+
+export const bannerShuffle = [
+    "https://ng.jumia.is/cms/Homepage/2021/w14/Artboard_1_copy_2.jpg",
+    
+]
