@@ -24,10 +24,13 @@ export default SideNav
 const SideNavList = styled.ul`
     list-style-type: none;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 5px;
+    margin-right: 15px;
+    flex: 0.175;
+    height: 400px;
 
     &:hover {
-        box-shadow: 0 0 5px #ddd;
+        box-shadow: 0 0 7px #ddd;
     }
 
     > li {
@@ -37,8 +40,11 @@ const SideNavList = styled.ul`
         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         font-weight: 100;
         font-size: 12px;
+        color: #555;
         /* border: 1px solid; */
         padding: 2px 5px;
+        height: calc(400px/12);
+        cursor: pointer;
         
 
         &:hover {
@@ -46,7 +52,7 @@ const SideNavList = styled.ul`
         }
 
         > p {
-            margin-left: 5px;
+            margin-left: 3px;
         }
     }
 `

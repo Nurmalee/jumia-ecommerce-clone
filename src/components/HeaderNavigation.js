@@ -277,6 +277,7 @@ const NavbarRight = styled.ul`
             > ul {
 
                 > li {
+                    padding: 15px 10px;
                     > p {
                         margin-left: 5px;
                     }
