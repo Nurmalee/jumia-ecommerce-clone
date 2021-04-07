@@ -4,12 +4,24 @@ import { LocalMall, Flight, Fastfood, Security } from '@material-ui/icons';
 
 const ExtendedLinks = () => {
 
+    const iconStyles = (iconBackground) => {
+        return {
+            color: "white", 
+            padding: "5px", 
+            border: "1px solid", 
+            height: "40px", 
+            width: "40px", 
+            borderRadius: "50%", 
+            backgroundColor: iconBackground
+        }
+    }
+
     return (
         <LinksContainer>
-            <div> <LocalMall style={{color: "white", padding: "5px", border: "1px solid", height: "40px", width: "40px", borderRadius: "50%", backgroundColor: "darkred" }} /> <p> Official Stores </p> </div>
-            <div> <Flight style={{color: "white", padding: "5px", border: "1px solid", height: "40px", width: "40px", borderRadius: "50%", backgroundColor: "blue"}} /> <p> Jumia Global </p> </div>
-            <div> <Fastfood style={{color: "white", padding: "5px", border: "1px solid", height: "40px", width: "40px", borderRadius: "50%" , backgroundColor: "orange"}} /> <p> Food Fest </p> </div>
-            <div> <Security style={{color: "white", padding: "5px", border: "1px solid", height: "40px", width: "40px", borderRadius: "50%", backgroundColor: "skyblue"}} /> <p> Buy Airtime </p> </div> 
+            <div> <LocalMall style={iconStyles("darkred")} /> <p> Official Stores </p> </div>
+            <div> <Flight style={iconStyles("blue")} /> <p> Jumia Global </p> </div>
+            <div> <Fastfood style={iconStyles("orange")} /> <p> Food Fest </p> </div>
+            <div> <Security style={iconStyles("skyblue")} /> <p> Buy Airtime </p> </div> 
         </LinksContainer>
     )
 }
