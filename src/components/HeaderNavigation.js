@@ -35,75 +35,110 @@ const HeaderNavigation = () => {
     }
 
     return (
-        <NavbarContainer>
+        <NavContainer>
+            <TopBanner>
+                <img src="https://ng.jumia.is/cms/Homepage/2020/Top-strip/ts-cheaper-del.jpg" alt="Advert banner"/>
+            </TopBanner>
 
-            <Navbar>
-                <img src={jumia_logo} alt="jumia.com.ng logo goes here"/>
+            {/* <TopBannerLinks>
 
-                <NavbarSearch>
-                    <div>
-                        <SearchOutlinedIcon style={{margin: "0 5px", color: "#444"}} />
-                        <input type="text" placeholder="Search products, brands and categories"/>
-                    </div>
-                    <button>search</button>
-                </NavbarSearch>
+            </TopBannerLinks> */}
 
-                <NavbarRight>
-                    <li ref={navItemRef} onClick={() => handleClick(navItemRef)}>
-                        <PersonOutlineOutlinedIcon style={{fontSize: "25px"}} />
-                        <h4>hi, nurudeen</h4>
-                        <KeyboardArrowDownOutlinedIcon style={{fontSize: "18px"}} />
+            <NavbarWrapper>
 
-                        <ul ref={sublistRef}>
-                            {
-                                userSubmenu.map((item, index) => {
-                                    const {Icon, name} = item
-                                    return (
-                                        <li> 
-                                            <Icon style={{fontSize: "22px"}}/> 
-                                            <p>{name}</p>  
-                                        </li>
-                                    ) 
-                                })
-                            }
-                            <button>logout</button>
-                        </ul>
+                <Navbar>
+                    <img src={jumia_logo} alt="jumia.com.ng logo goes here"/>
 
-                    </li>
+                    <NavbarSearch>
+                        <div>
+                            <SearchOutlinedIcon style={{margin: "0 5px", color: "#444"}} />
+                            <input type="text" placeholder="Search products, brands and categories"/>
+                        </div>
+                        <button>search</button>
+                    </NavbarSearch>
 
-                    <li ref={navItem2Ref} onClick={() => handleClick(navItem2Ref)}>
-                        <HelpOutlineOutlinedIcon style={{fontSize: "25px"}} />
-                        <h4>help</h4>
-                        <KeyboardArrowDownOutlinedIcon style={{fontSize: "18px"}} />
+                    <NavbarRight>
+                        <li ref={navItemRef} onClick={() => handleClick(navItemRef)}>
+                            <PersonOutlineOutlinedIcon style={{fontSize: "25px"}} />
+                            <h4>hi, nurudeen</h4>
+                            <KeyboardArrowDownOutlinedIcon style={{fontSize: "18px"}} />
 
-                        <ul ref={sublist2Ref}>
-                            {
-                                helpSubmenu.map((item, index) => {
-                                    return (
-                                        <li> 
-                                            <p>{item}</p>  
-                                        </li>
-                                    )
-                                })
-                            }
-                            <button> <SmsOutlined style={{marginRight: "15px"}}/> live help</button>
-                        </ul>
-                    </li>
-                    <li>
-                        <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
-                        <h4>cart</h4>
-                    </li>
-                </NavbarRight>
+                            <ul ref={sublistRef}>
+                                {
+                                    userSubmenu.map((item, index) => {
+                                        const {Icon, name} = item
+                                        return (
+                                            <li> 
+                                                <Icon style={{fontSize: "22px"}}/> 
+                                                <p>{name}</p>  
+                                            </li>
+                                        ) 
+                                    })
+                                }
+                                <button>logout</button>
+                            </ul>
 
-            </Navbar>
+                        </li>
 
-        </NavbarContainer>
+                        <li ref={navItem2Ref} onClick={() => handleClick(navItem2Ref)}>
+                            <HelpOutlineOutlinedIcon style={{fontSize: "25px"}} />
+                            <h4>help</h4>
+                            <KeyboardArrowDownOutlinedIcon style={{fontSize: "18px"}} />
+
+                            <ul ref={sublist2Ref}>
+                                {
+                                    helpSubmenu.map((item, index) => {
+                                        return (
+                                            <li> 
+                                                <p>{item}</p>  
+                                            </li>
+                                        )
+                                    })
+                                }
+                                <button> <SmsOutlined style={{marginRight: "15px"}}/> live help</button>
+                            </ul>
+                        </li>
+                        <li>
+                            <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
+                            <h4>cart</h4>
+                        </li>
+                    </NavbarRight>
+                </Navbar>
+
+            </NavbarWrapper>
+
+        </NavContainer>
     )
 }
 
 export default HeaderNavigation
 
-const NavbarContainer = styled.nav`
+const NavContainer = styled.nav`
+    background-color: transparent;
+`
+
+const TopBanner = styled.div`
+    text-align: center;
+    width: 1200px;
+    margin: 0 auto 10px auto;
+    padding: 0 10px;
+
+    > img {
+        object-fit: contain;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 1200px) {
+        width: 1000px;
+    }
+`
+
+// const TopBannerLinks = styled.div`
+//     text-align: center;
+//     height: 30px;
+//     border: 1px solid;
+// `
+const NavbarWrapper = styled.div`
     background-color: white;
 `
 

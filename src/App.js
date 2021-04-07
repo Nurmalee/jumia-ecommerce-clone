@@ -1,10 +1,10 @@
 import Body from "./components/Body"
-import Homepage from "./components/Homepage"
+import HeaderNavigation from "./components/HeaderNavigation"
 
 const App = () => {
     return (
         <>
-            <Homepage />
+            <HeaderNavigation />
             <Body />
         </>
     )
