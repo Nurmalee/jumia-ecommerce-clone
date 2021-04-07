@@ -108,6 +108,7 @@ const NavbarContainer = styled.nav`
 `
 
 const Navbar = styled.nav`
+background-color: white;
     width: 1200px;
     margin: 0 auto;
     height: 80px;   
