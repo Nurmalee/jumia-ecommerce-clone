@@ -1,36 +1,21 @@
-import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import StorefrontIcon from '@material-ui/icons/Storefront';
-import LocalAtmIcon from '@material-ui/icons/LocalAtm';
-
-import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
-import PhoneAndroidOutlinedIcon from '@material-ui/icons/PhoneAndroidOutlined';
-import ComputerOutlinedIcon from '@material-ui/icons/ComputerOutlined';
-import SportsEsportsOutlinedIcon from '@material-ui/icons/SportsEsportsOutlined';
-import DirectionsCarOutlinedIcon from '@material-ui/icons/DirectionsCarOutlined';
-import ChildCareOutlinedIcon from '@material-ui/icons/ChildCareOutlined';
-import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
-import FitnessCenterOutlinedIcon from '@material-ui/icons/FitnessCenterOutlined';
-import LocalHospitalOutlinedIcon from '@material-ui/icons/LocalHospitalOutlined';
-import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
-import ArrowDropDownCircleOutlinedIcon from '@material-ui/icons/ArrowDropDownCircleOutlined';
+import {PersonOutlineOutlined, FavoriteBorder, Storefront, LocalAtm, HomeOutlined, PhoneAndroidOutlined, ComputerOutlined, SportsEsportsOutlined, DirectionsCarOutlined, ChildCareOutlined, EmojiObjectsOutlined, FitnessCenterOutlined, LocalHospitalOutlined, StorefrontOutlined, ArrowDropDownCircleOutlined} from '@material-ui/icons';
 
 export const userSubmenu = [
     {
         name: "account",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: PersonOutlineOutlined,
     },
     {
         name: "orders",
-        Icon: StorefrontIcon,
+        Icon: Storefront,
     },
     {
         name: "saved items",
-        Icon: FavoriteBorderIcon,
+        Icon: FavoriteBorder,
     },
     {
         name: "jumia coupon",
-        Icon: LocalAtmIcon,
+        Icon: LocalAtm,
     }
 ]
 
@@ -45,51 +30,51 @@ export const helpSubmenu = [
 export const sideNavMenu = [
     {
         name: "supermarket",
-        Icon: StorefrontOutlinedIcon,
+        Icon: StorefrontOutlined,
     },
     {
         name: "health & beauty",
-        Icon: LocalHospitalOutlinedIcon,
+        Icon: LocalHospitalOutlined,
     },
     {
         name: "home & office",
-        Icon: HomeOutlinedIcon,
+        Icon: HomeOutlined,
     },
     {
         name: "phones & tablets",
-        Icon: PhoneAndroidOutlinedIcon,
+        Icon: PhoneAndroidOutlined,
     },
     {
         name: "computing",
-        Icon: ComputerOutlinedIcon,
+        Icon: ComputerOutlined,
     },
     {
         name: "electronics",
-        Icon: EmojiObjectsOutlinedIcon,
+        Icon: EmojiObjectsOutlined,
     },
     {
         name: "fashion",
-        Icon: PersonOutlineOutlinedIcon,
+        Icon: PersonOutlineOutlined,
     },
     {
         name: "baby products",
-        Icon: ChildCareOutlinedIcon,
+        Icon: ChildCareOutlined,
     },
     {
         name: "gaming",
-        Icon: SportsEsportsOutlinedIcon,
+        Icon: SportsEsportsOutlined,
     },
     {
         name: "sporting goods",
-        Icon: FitnessCenterOutlinedIcon,
+        Icon: FitnessCenterOutlined,
     },
     {
         name: "automobile",
-        Icon: DirectionsCarOutlinedIcon,
+        Icon: DirectionsCarOutlined,
     },
     {
         name: "other categories",
-        Icon: ArrowDropDownCircleOutlinedIcon,
+        Icon: ArrowDropDownCircleOutlined,
     }
 ]
 
