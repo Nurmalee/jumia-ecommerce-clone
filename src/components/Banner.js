@@ -2,6 +2,8 @@ import { useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { bannerShuffle } from '../data'
 
+import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
+
 import '../extended.css'
 
 
@@ -30,6 +32,7 @@ const Banner = () => {
     return (
         <BannerContainer>
             <div>
+                <p className="arrowRect"> <PlayCircleFilledIcon style={{fontSize: "45px"}} className="left" onClick={() => setImgIndex(imgIndex + 1)} /> </p>
                 {
                     bannerList.map((img, index) => {
                         let position = "nextSlide"
@@ -47,6 +50,7 @@ const Banner = () => {
                         )
                     })
                 }
+                <p className="arrowRect"> <PlayCircleFilledIcon style={{fontSize: "45px"}} className="right" onClick={() => setImgIndex(imgIndex - 1)} /> </p>
             </div>
 
             <SideBanner>
@@ -88,6 +92,24 @@ const BannerContainer = styled.div`
             top: 0;
             left: 0;
             transition: 1000ms;
+        }
+
+        > p {
+            z-index: 50;
+            position: absolute;
+            transform: rotate(180deg);
+            color: #444;
+            /* border: 1px solid; */
+            height: 100%;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            
+            &:nth-of-type(2){
+                right: 0;
+                transform: rotate(360deg);
+            }
         }
         
         @media screen and (max-width: 1200px) {
