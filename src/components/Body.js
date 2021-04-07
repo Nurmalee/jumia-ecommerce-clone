@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 import Banner from './Banner'
+import ExtendedLinks from './ExtendedLinks'
 import SideNav from './SideNav'
 
 const Body = () => {
     return (
         <BodyContainer>
-            <SideNav />
-            <Banner />
+            <section>
+                <SideNav />
+                <Banner />
+            </section>
+           
+            <ExtendedLinks />
             
         </BodyContainer>
     )
@@ -19,7 +24,10 @@ const BodyContainer = styled.main`
     padding: 0 10px;
     width: 1200px;
     /* border: 1px solid; */
-    display: flex;
+
+    > section {
+        display: flex;
+    }
 
     @media screen and (max-width: 1200px) {
         width: 1000px;

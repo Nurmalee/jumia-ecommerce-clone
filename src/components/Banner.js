@@ -78,6 +78,7 @@ const BannerContainer = styled.div`
         height: 100%;
         flex: 0.75;
         margin-right: 15px;
+        border-radius: 5px;
 
         position: relative;
         overflow: hidden;
