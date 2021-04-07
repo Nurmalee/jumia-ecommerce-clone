@@ -1,12 +1,52 @@
+import { useState, useEffect} from 'react'
 import styled from 'styled-components'
 import { bannerShuffle } from '../data'
 
+import '../extended.css'
+
 
 const Banner = () => {
+    const [bannerList] = useState(bannerShuffle)
+    const [imgIndex, setImgIndex] = useState(0)
+
+    useEffect(() => {
+            if(imgIndex >= bannerList.length){
+                setImgIndex(0)
+            }
+            if(imgIndex < 0 ){
+                setImgIndex(bannerList.length - 1)
+            }
+    }, [imgIndex, bannerList.length])
+
+    useEffect(() => {
+        let shuffleTimer = setInterval(() => {
+            setImgIndex(imgIndex + 1)
+        }, 7000)
+        return () => {
+            clearInterval(shuffleTimer)
+        }
+    }, [imgIndex])
+
     return (
         <BannerContainer>
             <div>
-                <img src="https://ng.jumia.is/cms/FOODFEST/11S1424x768__-(1).jpg" alt="bannerImage"/>
+                {
+                    bannerList.map((img, index) => {
+                        let position = "nextSlide"
+
+                        if(index === imgIndex){
+                            position = "currentSlide"
+                        }
+
+                        if(index === imgIndex - 1 || (index < 0 && (index === bannerList.length - 1))){
+                            position = "prevSlide"
+                        }
+                        
+                        return (
+                            <img className={position} src={img} alt="bannerImage"/>
+                        )
+                    })
+                }
             </div>
 
             <SideBanner>
@@ -34,12 +74,20 @@ const BannerContainer = styled.div`
         height: 100%;
         flex: 0.75;
         margin-right: 15px;
+
+        position: relative;
+        overflow: hidden;
         
         > img {
             object-fit: fill;
             height: 100%;
             width: 100%;
             border-radius: 5px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 1000ms;
         }
         
         @media screen and (max-width: 1200px) {
