@@ -108,7 +108,7 @@ const NavbarContainer = styled.nav`
 `
 
 const Navbar = styled.nav`
-background-color: white;
+    background-color: white;
     width: 1200px;
     margin: 0 auto;
     height: 80px;   
@@ -221,7 +221,7 @@ const NavbarRight = styled.ul`
             background-color: white;
             box-shadow: 0 0 5px #bbb;
             border-radius: 5px;
-            z-index: 20;
+            z-index: 500;
             border-bottom: 2px solid #ddd;
             
             &:hover {
