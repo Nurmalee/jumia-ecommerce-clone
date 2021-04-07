@@ -1,0 +1,14 @@
+.nextSlide {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.prevSlide {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.currentSlide {
+    transform: translateX(0);
+    opacity: 1;
+}
