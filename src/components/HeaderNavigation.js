@@ -1,6 +1,7 @@
 import {useRef} from 'react' 
 import styled from 'styled-components'
 import jumia_logo from '../images/jumia-logo.png'
+
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
@@ -195,8 +196,8 @@ const NavbarRight = styled.ul`
         /* border: 1px solid; */
 
         &:hover {
-            color: darkorange;
-            background-color: #ddd;
+            color: #EE7600;
+            background-color: #EAEAEA;
 
             > ul {
                 color: #444;
