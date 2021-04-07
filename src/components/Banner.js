@@ -115,6 +115,7 @@ const BannerContainer = styled.div`
         
         @media screen and (max-width: 1200px) {
             flex: 1;
+            margin-right: 0;
         }
     }
 
