@@ -12,3 +12,12 @@
     transform: translateX(0);
     opacity: 1;
 }
+
+.left, .right {
+    visibility: hidden;
+}
+
+.arrowRect:hover .right,
+.arrowRect:hover .left {
+    visibility: visible;
+}
