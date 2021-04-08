@@ -2,17 +2,20 @@ import styled from 'styled-components'
 import Banner from './Banner'
 import ExtendedLinks from './ExtendedLinks'
 import SideNav from './SideNav'
+import TopSelling from './TopSelling'
 
 const Body = () => {
     return (
         <BodyContainer>
-            
+
             <section>
                 <SideNav />
                 <Banner />
             </section>
            
             <ExtendedLinks />
+
+            <TopSelling />
             
         </BodyContainer>
     )
