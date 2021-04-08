@@ -46,7 +46,6 @@ const SideNavList = styled.ul`
         height: calc(400px/12);
         cursor: pointer;
         
-
         &:hover {
             color: orange;
         }

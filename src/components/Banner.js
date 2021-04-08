@@ -65,8 +65,6 @@ export default Banner
 
 const BannerContainer = styled.div`
     height: 400px;
-    /* width: 700px; */
-    /* border: 1px solid; */
     flex: 0.825;
     display: flex;
 

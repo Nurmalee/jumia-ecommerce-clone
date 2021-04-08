@@ -138,6 +138,7 @@ const TopBanner = styled.div`
 //     height: 30px;
 //     border: 1px solid;
 // `
+
 const NavbarWrapper = styled.div`
     background-color: white;
 `
@@ -227,7 +228,6 @@ const NavbarRight = styled.ul`
         border-radius: 2px;
         color: #444;
         position: relative;
-        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
 
         /* border: 1px solid; */
 

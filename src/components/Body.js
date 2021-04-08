@@ -6,6 +6,7 @@ import SideNav from './SideNav'
 const Body = () => {
     return (
         <BodyContainer>
+            
             <section>
                 <SideNav />
                 <Banner />
