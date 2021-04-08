@@ -89,3 +89,46 @@ export const bannerShuffle = [
     "https://ng.jumia.is/cms/Homepage/2021/w14/Artboard_1.jpg", //TREND SPORTING
 
 ]
+
+export const products = [
+    {
+        name: "samsung",
+        desc: 'Samsung Samsung Galaxy A12 - 6.5" 48MP Camera, 4/64GB Memory, 5000maH Battery, Fingerprint, 4G LTE - BLACK',
+        image: "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/11/886217/1.jpg?7723",
+        current_price: "65,990",
+        old_price: "80000",
+        eligibility_statement: "eligibe for free shipping with jumia express (lagos only) OR jumia prime"
+    },
+    {
+        name: "samsung",
+        desc: 'Samsung Samsung Galaxy A12 - 6.5" 48MP Camera, 4/64GB Memory, 5000maH Battery, Fingerprint, 4G LTE - BLACK',
+        image: "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/53/718375/1.jpg?0866",
+        current_price: "65,990",
+        old_price: "80000",
+        eligibility_statement: "eligibe for free shipping with jumia express (lagos only) OR jumia prime"
+    },
+    {
+        name: "samsung",
+        desc: 'Samsung Samsung Galaxy A12 - 6.5" 48MP Camera, 4/64GB Memory, 5000maH Battery, Fingerprint, 4G LTE - BLACK',
+        image: "https://ng.jumia.is/cms/0-7-top-categories/white-bg/electronics.jpg",
+        current_price: "65,990",
+        old_price: "80000",
+        eligibility_statement: "eligibe for free shipping with jumia express (lagos only) OR jumia prime"
+    },
+    {
+        name: "samsung",
+        desc: 'Samsung Samsung Galaxy A12 - 6.5" 48MP Camera, 4/64GB Memory, 5000maH Battery, Fingerprint, 4G LTE - BLACK',
+        image: "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/64/629476/3.jpg?3908",
+        current_price: "65,990",
+        old_price: "80000",
+        eligibility_statement: "eligibe for free shipping with jumia express (lagos only) OR jumia prime"
+    },
+    {
+        name: "samsung",
+        desc: 'Samsung Samsung Galaxy A12 - 6.5" 48MP Camera, 4/64GB Memory, 5000maH Battery, Fingerprint, 4G LTE - BLACK',
+        image: "https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/69/747454/1.jpg?9869",
+        current_price: "65,990",
+        old_price: "80000",
+        eligibility_statement: "eligibe for free shipping with jumia express (lagos only) OR jumia prime"
+    }
+]
