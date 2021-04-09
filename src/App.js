@@ -9,7 +9,7 @@ const App = () => {
             <HeaderNavigation />
            
             <Switch>
-                <Route exact path="/body" component={Body} />
+                <Route exact path="/" component={Body} />
                 <Route exact path="/cart" component={Cart} />
             </Switch>
 
