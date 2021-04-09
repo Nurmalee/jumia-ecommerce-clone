@@ -1,6 +1,7 @@
-import {useRef} from 'react' 
+import {useRef} from 'react'
+import {Link} from 'react-router-dom'
 import styled from 'styled-components'
-import jumia_logo from '../images/jumia-logo.png'
+import jumia_logo from '../../images/jumia-logo.png'
 
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
@@ -9,7 +10,7 @@ import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import SmsOutlined from '@material-ui/icons/SmsOutlined';
 
-import { userSubmenu, helpSubmenu } from '../data'
+import { userSubmenu, helpSubmenu } from '../../data'
 
 const HeaderNavigation = () => {
 
@@ -47,7 +48,8 @@ const HeaderNavigation = () => {
             <NavbarWrapper>
 
                 <Navbar>
-                    <img src={jumia_logo} alt="jumia.com.ng logo goes here"/>
+                    <Link to="/body"><img src={jumia_logo} alt="jumia.com.ng logo goes here"/></Link>
+                    
 
                     <NavbarSearch>
                         <div>
@@ -155,7 +157,7 @@ const Navbar = styled.nav`
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: 100;
 
-    > img {
+    img {
         height: 30px;
         cursor: pointer;
     }

@@ -1,10 +1,10 @@
 import { useState, useEffect} from 'react'
 import styled from 'styled-components'
-import { bannerShuffle } from '../data'
+import { bannerShuffle } from '../../data'
 
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 
-import '../extended.css'
+import '../../extended.css'
 
 
 const Banner = () => {

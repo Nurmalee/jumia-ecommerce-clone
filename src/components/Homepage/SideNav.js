@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {sideNavMenu} from '../data'
+import {sideNavMenu} from '../../data'
 
 const SideNav = () => {
     return (
