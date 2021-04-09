@@ -47,6 +47,10 @@ const CartContainer = styled.div`
         font-size: 22px; 
     }
 
+    > p {
+        font-size: 20px; 
+    }
+
     > h2, p, button {
         margin: 20px;
     }

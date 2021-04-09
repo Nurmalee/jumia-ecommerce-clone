@@ -80,6 +80,7 @@ const BannerContainer = styled.div`
 
         position: relative;
         overflow: hidden;
+        /* z-index: -1; */
         
         > img {
             object-fit: fill;
@@ -94,7 +95,7 @@ const BannerContainer = styled.div`
         }
 
         > p {
-            z-index: 50;
+            z-index: 20;
             position: absolute;
             transform: rotate(180deg);
             color: #222;

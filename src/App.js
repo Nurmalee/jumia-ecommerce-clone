@@ -6,6 +6,7 @@ import HeaderNavigation from "./components//Homepage/HeaderNavigation"
 const App = () => {
     return (
         <Router>
+            
             <HeaderNavigation />
            
             <Switch>

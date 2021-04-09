@@ -24,7 +24,7 @@ const Body = () => {
                 <img src="https://ng.jumia.is/cms/Homepage/2021/w14/11CB-1152x252.jpg" alt="adveert"/>
             </AdBanner1>
 
-            <TopProducts colorCode={{bg: "darkred", text: "white" }} categoryHeading="Deals of the day | starting from #1,000" productArray={topDeals}/>
+            <TopProducts colorCode={{bg: "darkred", text: "white" }} categoryHeading="Deals of the day | starting from &#8358; 1,000" productArray={topDeals}/>
             
             <AdBanner2>
                 <img src="https://ng.jumia.is/cms/Homepage/2021/w07/Smartwatches_.jpg" alt="adveert"/>
