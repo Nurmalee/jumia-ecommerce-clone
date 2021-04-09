@@ -48,7 +48,7 @@ const HeaderNavigation = () => {
             <NavbarWrapper>
 
                 <Navbar>
-                    <Link to="/body"><img src={jumia_logo} alt="jumia.com.ng logo goes here"/></Link>
+                    <Link to="/"><img src={jumia_logo} alt="jumia.com.ng logo goes here"/></Link>
                     
 
                     <NavbarSearch>
@@ -100,10 +100,14 @@ const HeaderNavigation = () => {
                                 <button> <SmsOutlined style={{marginRight: "15px"}}/> live help</button>
                             </ul>
                         </li>
-                        <li>
-                            <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
-                            <h4>cart</h4>
+
+                        <li>  
+                            <Link to="/cart" style={{display: "flex", alignItems: "flex-end", textDecoration: "none", color: "#444"}}>                         
+                                <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
+                                <h4>cart</h4>
+                            </Link>
                         </li>
+                        
                     </NavbarRight>
                 </Navbar>
 
@@ -117,6 +121,11 @@ export default HeaderNavigation
 
 const NavContainer = styled.nav`
     background-color: transparent;
+    position: sticky;
+    z-index: 500;
+    top: -75px;
+    left: 0;
+    right: 0;
 `
 
 const TopBanner = styled.div`
@@ -351,5 +360,4 @@ const NavbarRight = styled.ul`
             }
         }
     }
-
 `
