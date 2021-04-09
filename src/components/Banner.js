@@ -97,7 +97,7 @@ const BannerContainer = styled.div`
             z-index: 50;
             position: absolute;
             transform: rotate(180deg);
-            color: #444;
+            color: #222;
             /* border: 1px solid; */
             height: 100%;
             width: 70px;
