@@ -1,4 +1,3 @@
-import {useRef} from 'react'
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import jumia_logo from '../../images/jumia-logo.png'
@@ -11,29 +10,11 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import SmsOutlined from '@material-ui/icons/SmsOutlined';
 
 import { userSubmenu, helpSubmenu } from '../../data'
+import {useAppContext} from '../../context'
 
 const HeaderNavigation = () => {
 
-    const sublistRef = useRef("")
-    const navItemRef = useRef("")
-
-    const sublist2Ref = useRef("")
-    const navItem2Ref = useRef("")
-
-
-    const handleClick = (item) => {
-        // item.current.style.backgroundColor = "#ddd"
-        // item.current.style.color = "black"
-        // if(item === navItemRef){
-        //     sublistRef.current.style.display = "block"
-        //     sublist2Ref.current.style.display = "none"
-        //     navItem2Ref.current.style.backgroundColor = "transparent"
-        // } else {
-        //     sublistRef.current.style.display = "none"
-        //     sublist2Ref.current.style.display = "block"
-        //     navItemRef.current.style.backgroundColor = "transparent"
-        // }
-    }
+    const {cart} = useAppContext()
 
     return (
         <NavContainer>
@@ -60,17 +41,17 @@ const HeaderNavigation = () => {
                     </NavbarSearch>
 
                     <NavbarRight>
-                        <li ref={navItemRef} onClick={() => handleClick(navItemRef)}>
+                        <li>
                             <PersonOutlineOutlinedIcon style={{fontSize: "25px"}} />
                             <h4>hi, nurudeen</h4>
                             <KeyboardArrowDownOutlinedIcon style={{fontSize: "18px"}} />
 
-                            <ul ref={sublistRef}>
+                            <ul>
                                 {
                                     userSubmenu.map((item, index) => {
                                         const {Icon, name} = item
                                         return (
-                                            <li> 
+                                            <li key={index}> 
                                                 <Icon style={{fontSize: "22px"}}/> 
                                                 <p>{name}</p>  
                                             </li>
@@ -82,16 +63,16 @@ const HeaderNavigation = () => {
 
                         </li>
 
-                        <li ref={navItem2Ref} onClick={() => handleClick(navItem2Ref)}>
+                        <li>
                             <HelpOutlineOutlinedIcon style={{fontSize: "25px"}} />
                             <h4>help</h4>
                             <KeyboardArrowDownOutlinedIcon style={{fontSize: "18px"}} />
 
-                            <ul ref={sublist2Ref}>
+                            <ul>
                                 {
                                     helpSubmenu.map((item, index) => {
                                         return (
-                                            <li> 
+                                            <li key={index}> 
                                                 <p>{item}</p>  
                                             </li>
                                         )
@@ -106,6 +87,7 @@ const HeaderNavigation = () => {
                                 <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
                                 <h4>cart</h4>
                             </Link>
+                            {cart.length > 0 && <span>{cart.length}</span>}
                         </li>
                         
                     </NavbarRight>
@@ -355,8 +337,26 @@ const NavbarRight = styled.ul`
         }
 
         &:nth-of-type(3) {
+            position: relative;
             &:hover {
                 background-color: transparent;
+            }
+
+            > span {
+                height: 22px;
+                width: 22px;
+                padding: 2px;
+                border: 2px solid;
+                border-radius: 50%;
+                font-size: 11px;
+                background-color: #EE7600;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 17px;
+                top: 0;
             }
         }
     }
