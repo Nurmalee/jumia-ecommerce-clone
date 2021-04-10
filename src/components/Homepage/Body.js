@@ -4,9 +4,13 @@ import ExtendedLinks from './ExtendedLinks'
 import SideNav from './SideNav'
 import TopProducts from './TopProducts'
 
-import { topProducts, topDeals }  from '../../data'
+// import { topProducts, topDeals }  from '../../data'
+
+import {useAppContext} from '../../context'
 
 const Body = () => {
+
+    const {products} = useAppContext()
 
     return (
         <BodyContainer>
@@ -18,13 +22,13 @@ const Body = () => {
            
             <ExtendedLinks />
 
-            <TopProducts colorCode={{bg: "white", text: "black" }} categoryHeading="Top selling items" productArray={topProducts} />
+            <TopProducts colorCode={{bg: "white", text: "black" }} categoryHeading="Top selling items" productArray={products.topProducts} />
 
             <AdBanner1>
                 <img src="https://ng.jumia.is/cms/Homepage/2021/w14/11CB-1152x252.jpg" alt="adveert"/>
             </AdBanner1>
 
-            <TopProducts colorCode={{bg: "darkred", text: "white" }} categoryHeading="Deals of the day | starting from &#8358; 1,000" productArray={topDeals}/>
+            <TopProducts colorCode={{bg: "darkred", text: "white" }} categoryHeading="Deals of the day | starting from &#8358; 1,000" productArray={products.topDeals}/>
             
             <AdBanner2>
                 <img src="https://ng.jumia.is/cms/Homepage/2021/w07/Smartwatches_.jpg" alt="adveert"/>
