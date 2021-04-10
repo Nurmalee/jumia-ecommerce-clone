@@ -1,9 +1,26 @@
 import styled from 'styled-components'
 
 import { Star } from '@material-ui/icons';
+import {useAppContext} from '../../context'
 
 
 const SingleProduct = ({name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
+
+    const {addItem} = useAppContext()
+
+    const onAddToCart = () => {
+        const newProduct = {
+            id: new Date().getTime().toString(),
+            name,
+            desc,
+            image,
+            price: current_price,
+            discount: percentReduct,
+            eligibility_statement 
+        }
+
+        addItem(newProduct)
+    }
 
     return (
         <Product>
@@ -28,7 +45,7 @@ const SingleProduct = ({name, status, desc, image, current_price, percentReduct,
                 <p> {eligibility_statement} </p>
             </ExtraDetails>
 
-            <button>add to cart</button>
+            <button onClick={onAddToCart}>add to cart</button>
 
         </Product>
     )
