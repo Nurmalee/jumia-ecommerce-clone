@@ -46,7 +46,7 @@ const Banner = () => {
                         }
                         
                         return (
-                            <img className={position} src={img} alt="bannerImage"/>
+                            <img key={index} className={position} src={img} alt="bannerImage"/>
                         )
                     })
                 }
