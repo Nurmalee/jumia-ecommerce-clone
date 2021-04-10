@@ -1,6 +1,7 @@
 import {createContext, useContext, useReducer} from 'react'
 import cartReducer from './cartReducer'
 import ACTION from "./actions"
+import { topProducts, topDeals }  from './data'
 
 const appContext = createContext()
 
@@ -11,6 +12,10 @@ export const useAppContext = () => {
 export const AppState = ({children}) => {
 
     const initialState = {
+        products: {
+            topProducts,
+            topDeals
+        },
         cart: []
     }
     
@@ -29,7 +34,7 @@ export const AppState = ({children}) => {
     }
 
     return (
-        <appContext.Provider value={{cart: state.cart, addItem, removeItem, clearCart}}>
+        <appContext.Provider value={{cart: state.cart, products: state.products, addItem, removeItem, clearCart}}>
             {children}
         </appContext.Provider>
     )
