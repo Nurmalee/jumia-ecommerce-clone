@@ -1,7 +1,11 @@
 import {Delete} from '@material-ui/icons'
+import {useAppContext} from '../../context'
 
 const SingleCartItem = ({ id, name, desc, image, price, discount, eligibility_statement }) => {
+
+    const {removeItem} = useAppContext()
     const old_price = Number(price) + parseInt(Number(price) * Number(discount))
+
     return (
         <tr>
             <td> 
@@ -11,7 +15,7 @@ const SingleCartItem = ({ id, name, desc, image, price, discount, eligibility_st
                 <div>
                     <p>{desc}</p>
                     <p>{eligibility_statement}</p>
-                    <button> <Delete style={{fontSize: "17px", marginRight: "7px"}} /> remove</button>
+                    <button onClick={() => removeItem(id)}> <Delete style={{fontSize: "17px", marginRight: "7px"}} /> remove</button>
                 </div>
             </td>
             <td>2</td>
