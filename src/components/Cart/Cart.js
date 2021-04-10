@@ -104,6 +104,7 @@ const CartContainer = styled.div`
     padding: 20px 10px 30px 10px;
     width: 1000px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
 
     > h1 {
         text-align: left;
@@ -120,7 +121,7 @@ const CartContainer = styled.div`
 const Table = styled.table`
 
     width: 100%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 15px 0;
 
     > thead {
@@ -138,6 +139,7 @@ const Table = styled.table`
 
                 &:first-of-type {
                     justify-content: flex-start;
+                    padding: 0;
                 }
             }
         }   
@@ -146,18 +148,19 @@ const Table = styled.table`
 
     tr {
         background-color: white;
+
         > td {
-            padding: 5px;
+            padding: 10px;
 
             &:first-of-type {
-                border: 1px solid blue;
+                /* border: 1px solid blue; */
                 /* width: 55%; */
                 display: flex;
                 align-items: center;
                 /* justify-content: center; */
 
                 > div {
-                    border: 1px solid teal;
+                    /* border: 1px solid teal; */
                     /* display: flex; */
 
                     > img {
@@ -202,13 +205,13 @@ const Table = styled.table`
             }
 
             &:nth-of-type(2) {
-                border: 1px solid green;
+                /* border: 1px solid green; */
                 width: 10%;
                 text-align: center;
             }
 
             &:nth-of-type(3) {
-                border: 1px solid brown;
+                /* border: 1px solid brown; */
                 width: 17.5%;
                 text-align: center;
 
@@ -229,7 +232,7 @@ const Table = styled.table`
 
 
             &:nth-of-type(4) {
-                border: 1px solid yellow;
+                /* border: 1px solid yellow; */
                 width: 17.5%;
                 text-align: center;
             }
