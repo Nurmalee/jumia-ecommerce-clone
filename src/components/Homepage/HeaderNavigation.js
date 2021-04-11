@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react'
+
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import jumia_logo from '../../images/jumia-logo.png'
@@ -15,6 +17,18 @@ import {useAppContext} from '../../context'
 const HeaderNavigation = () => {
 
     const {cart} = useAppContext()
+    const [cartItemCount, setCartItemCount] = useState(0)
+
+    useEffect(() => {
+        // let currentCount = 0;
+        let currentCount = cart.reduce((totalCount, item) => {
+            totalCount += item.qty
+            return totalCount
+        }, 0)
+        
+        setCartItemCount(currentCount)
+
+    }, [cart])
 
     return (
         <NavContainer>
@@ -87,7 +101,7 @@ const HeaderNavigation = () => {
                                 <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
                                 <h4>cart</h4>
                             </Link>
-                            {cart.length > 0 && <span>{cart.length}</span>}
+                            {cart.length > 0 && <span>{cartItemCount}</span>}
                         </li>
                         
                     </NavbarRight>
@@ -105,7 +119,7 @@ const NavContainer = styled.nav`
     background-color: transparent;
     position: sticky;
     z-index: 500;
-    top: -75px;
+    top: -80px;
     left: 0;
     right: 0;
 `
@@ -113,6 +127,7 @@ const NavContainer = styled.nav`
 const TopBanner = styled.div`
     text-align: center;
     width: 1200px;
+    height: 70px;
     margin: 0 auto 10px auto;
     padding: 0 10px;
 

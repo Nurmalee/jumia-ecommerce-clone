@@ -1,10 +1,51 @@
+import {useState} from 'react'
+
 import {Delete} from '@material-ui/icons'
 import {useAppContext} from '../../context'
 
-const SingleCartItem = ({ id, name, desc, image, price, discount, eligibility_statement }) => {
+const SingleCartItem = ({ id, qty, name, desc, image, price, discount, eligibility_statement }) => {
 
-    const {removeItem} = useAppContext()
+    const [quantity, setQuantity] = useState(qty)
+    const {removeItem, updateItemQuantity} = useAppContext()
     const old_price = Number(price) + parseInt(Number(price) * Number(discount))
+    const subtotal = quantity * price
+
+    // useEffect(() => {
+    //     if(quantity >= 12){
+    //         setQuantity(12)
+    //     }
+
+    //     if(quantity <= 1){
+    //         setQuantity(1)
+    //     }
+
+    // }, [quantity])
+
+    // useEffect(() => {
+    //     updateItemQuantity(id, quantity)
+    // }, [id, quantity, updateItemQuantity])
+
+    const inputQuantityHandler = (e) => {
+        const input = e.target.value
+        setQuantity(input)
+        updateItemQuantity(id, input)
+    }
+
+    // const increaseQuantityHandler = () => {
+    //     setQuantity(quantity + 1)
+    //      if(quantity >= 12){
+    //         setQuantity(12)
+    //     }
+    //     updateItemQuantity(id, quantity)
+    // }
+
+    // const decreaseQuantityHandler = () => {
+    //     setQuantity(quantity - 1)
+    //     if(quantity <= 1){
+    //         setQuantity(1)
+    //     }
+    //     updateItemQuantity(id, quantity)
+    // }
 
     return (
         <tr>
@@ -18,13 +59,19 @@ const SingleCartItem = ({ id, name, desc, image, price, discount, eligibility_st
                     <button onClick={() => removeItem(id)}> <Delete style={{fontSize: "17px", marginRight: "7px"}} /> remove</button>
                 </div>
             </td>
-            <td>2</td>
+            <td>
+                {/* <button onClick={decreaseQuantityHandler}>-</button>
+                {quantity}
+                <button onClick={increaseQuantityHandler}>+</button> */}
+                <input type="number" min={1} value={quantity} onChange={inputQuantityHandler} />
+            </td>
             <td> 
                 <p> &#8358; {price} </p>
                 <p> &#8358; {old_price}</p>
-                <p> Savings: &#8358; {parseInt(discount * old_price)} </p>
+                {/* <p> Savings: &#8358; {parseInt(discount * old_price)} </p> */}
+                <p> Savings: &#8358; {old_price - price} </p>
             </td>
-            <td>  &#8358; {2 * price}</td>
+            <td>  &#8358; {subtotal}</td>
         </tr>
     )
 }

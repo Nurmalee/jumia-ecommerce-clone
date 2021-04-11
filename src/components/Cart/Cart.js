@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react'
+
 import { Link } from "react-router-dom"
 import styled from 'styled-components'
 
@@ -8,6 +10,19 @@ import SingleCartItem from "./SingleCartItem"
 const Cart = () => {
 
     const {cart} = useAppContext()
+    const [totalValues, setTotalValues] = useState({})
+
+    useEffect(() => {
+        const totals = cart.reduce((total, item) => {
+            total.totalItems += item.qty
+            total.totalAmount += item.qty * item.price
+            return total
+        }, {
+            totalItems: 0,
+            totalAmount: 0
+        })
+        setTotalValues(totals)
+    }, [cart])
 
     if(cart.length <= 0) {
         return (
@@ -25,8 +40,9 @@ const Cart = () => {
         )
     }
     return (
+        <>
         <CartContainer>
-            <h1>Cart ({cart.length} {cart.length <= 1 ? "item" : "items" })</h1>
+            <h1>Cart ({totalValues.totalItems} {cart.length <= 1 ? "item" : "items" })</h1>
             <p>Your order is eligible for free shipping (Lagos only, excluding large items) </p>
             
             <Table>
@@ -42,12 +58,103 @@ const Cart = () => {
                 <tbody>
                     {cart.map(item => <SingleCartItem {...item} />)}
                 </tbody>
-            </Table> 
+            </Table>
+
+            <TotalAmount>
+                <p>Total: <span> &#8358; {totalValues.totalAmount} </span> </p>
+
+                <div>
+                    <p>Your order is eligible for free shipping (Lagos only, excluding large items)</p>
+                </div>
+            </TotalAmount>
+
         </CartContainer>
+
+        <CartButtons>
+            <div>
+                <Link to="/" style={{color: "white", textDecoration: "none"}}><button>continue shopping</button> </Link>
+                <Link to="/cart" style={{color: "white", textDecoration: "none", }}><button style={{backgroundColor: "#EE7600", color: "white"}}>proceed to checkout</button> </Link>
+            </div>
+        </CartButtons>
+
+        </>
     )
 }
 
 export default Cart
+
+const CartButtons = styled.div`
+    background-color: white;
+    /* border: 2px solid #EE7600; */
+    padding: 20px 0;
+    margin-bottom: 50px;
+
+    > div {
+        width: 1000px;
+        /* border: 2px solid #EE7600; */
+        margin: 0 auto;
+        text-align: right;
+
+        button {
+            padding: 12px 50px;
+            margin-right: 10px;
+            border: none;
+            outline: none;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+            box-shadow: 0 0 10px #ccc;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:first-of-type {
+                color: #EE7600;
+                background-color: white;
+
+                &:hover {
+                    background-color: #eee;
+                }
+            }
+
+            &:nth-of-type(2) {
+                background-color: #EE7600;
+
+                &:hover {
+                    background-color: #CC5500;
+                }
+            }
+        }
+    }
+`
+
+const TotalAmount = styled.div`
+    /* border: 2px solid #EE7600; */
+    padding: 20px 10px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    > p {
+
+        font-weight: 600;
+        > span {
+            margin-left: 45px;
+            font-size: 20px;
+            color: #EE7600;
+        }
+    }
+
+    > div {
+        padding: 10px;
+        margin-top: 10px;
+        font-size: 14px;
+        border: 1px solid green;
+        width: 350px;
+        border-radius: 3px;
+        text-align: left;
+    }
+`
 
 const EmptyCart = styled.div`
     text-align: center;
@@ -76,7 +183,7 @@ const EmptyCart = styled.div`
     }
 
     > img {
-        margin-top: 50px;
+        margin-top: 35px;
     }
 
     button {
@@ -101,10 +208,12 @@ const EmptyCart = styled.div`
 
 const CartContainer = styled.div`
     margin: 20px auto;
-    padding: 20px 10px 30px 10px;
+    margin-bottom: 0;
+    padding: 20px 10px 0 10px;
     width: 1000px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
+    /* border: 2px solid #EE7600; */
 
     > h1 {
         text-align: left;
@@ -140,6 +249,10 @@ const Table = styled.table`
                 &:first-of-type {
                     justify-content: flex-start;
                     padding: 0;
+                }
+
+                &:nth-of-type(4) {
+                    color: #999;
                 }
             }
         }   
@@ -196,8 +309,14 @@ const Table = styled.table`
                             font-size: 12px;
                             cursor: pointer;
                             font-weight: 600;
+                            padding: 5px 10px 5px 0px;
+                            border-radius: 2px;
                             display: flex;
                             align-items: flex-end;
+
+                            &:hover {
+                                background-color: #F5F5F5;
+                            }
                         }
                     }
 
@@ -208,6 +327,33 @@ const Table = styled.table`
                 /* border: 1px solid green; */
                 width: 10%;
                 text-align: center;
+
+                > button {
+                    height: 20px;
+                    width: 20px;
+                    text-align: center;
+                    cursor: pointer;
+                    border: none;
+                    outline: none;
+                    border-radius: 2px;
+
+                    &:hover {
+                        background-color: #EE7600;
+                        color: white;
+                    }
+
+                    &:first-of-type {
+                        margin-right: 4px;
+                    }
+
+                    &:nth-of-type(2) {
+                        margin-left: 4px;
+                    }
+                }
+
+                > input {
+                    width: 40px;
+                }
             }
 
             &:nth-of-type(3) {
@@ -235,6 +381,9 @@ const Table = styled.table`
                 /* border: 1px solid yellow; */
                 width: 17.5%;
                 text-align: center;
+                color: #EE7600;
+                font-weight: 600;
+                font-size: 16px;
             }
         }
             
