@@ -4,13 +4,13 @@ import { Star } from '@material-ui/icons';
 import {useAppContext} from '../../context'
 
 
-const SingleProduct = ({name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
+const SingleProduct = ({id, name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
 
     const {addItem} = useAppContext()
 
     const onAddToCart = () => {
         const newProduct = {
-            id: new Date().getTime().toString(),
+            id,
             name,
             desc,
             image,
