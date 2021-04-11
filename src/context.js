@@ -29,12 +29,16 @@ export const AppState = ({children}) => {
         dispatch({type: ACTION.REMOVE_ITEM, payload: productID})
     }
 
+    function updateItemQuantity(productID, quantityValue){
+        dispatch({type: ACTION.UPDATE_ITEM_QAUNTITY, payload: {id: productID, qty: quantityValue }})
+    }
+
     function clearCart(){
         dispatch({type: ACTION.CLEAR_CART})
     }
 
     return (
-        <appContext.Provider value={{cart: state.cart, products: state.products, addItem, removeItem, clearCart}}>
+        <appContext.Provider value={{cart: state.cart, products: state.products, addItem, removeItem, updateItemQuantity, clearCart}}>
             {children}
         </appContext.Provider>
     )
