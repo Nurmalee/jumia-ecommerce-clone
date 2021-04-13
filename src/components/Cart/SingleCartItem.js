@@ -66,12 +66,12 @@ const SingleCartItem = ({ id, qty, name, desc, image, price, discount, eligibili
                 <input type="number" min={1} value={quantity} onChange={inputQuantityHandler} />
             </td>
             <td> 
-                <p> &#8358; {price} </p>
-                <p> &#8358; {old_price}</p>
+                <p> &#8358; {Number(price).toLocaleString()} </p>
+                <p> &#8358; {old_price.toLocaleString()}</p>
                 {/* <p> Savings: &#8358; {parseInt(discount * old_price)} </p> */}
-                <p> Savings: &#8358; {old_price - price} </p>
+                <p> Savings: &#8358; {(old_price - price).toLocaleString()} </p>
             </td>
-            <td>  &#8358; {subtotal}</td>
+            <td>  &#8358; {subtotal.toLocaleString()}</td>
         </tr>
     )
 }
