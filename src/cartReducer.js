@@ -36,7 +36,10 @@ const cartReducer = (state, action) => {
         return {
             ...state,
             cart: state.cart.map(item => item.id === action.payload.id ? {...item, qty: +action.payload.qty} : item)
-        }  
+        }
+
+        case ACTION.GET_TOTAL:
+            console.log("TOTAL AMOUNT")
 
         case ACTION.CLEAR_CART:
         return {
