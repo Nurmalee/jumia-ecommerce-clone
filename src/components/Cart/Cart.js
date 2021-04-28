@@ -1,28 +1,20 @@
-import {useState, useEffect} from 'react'
-
 import { Link } from "react-router-dom"
 import styled from 'styled-components'
-
-import {useAppContext} from '../../context'
+import {useSelector} from 'react-redux'
 import SingleCartItem from "./SingleCartItem"
 
 
 const Cart = () => {
 
-    const {cart} = useAppContext()
-    const [totalValues, setTotalValues] = useState({})
+    const {cart} = useSelector(state => state.cart)
 
-    useEffect(() => {
-        const totals = cart.reduce((total, item) => {
-            total.totalItems += item.qty
-            total.totalAmount += item.qty * item.price
-            return total
-        }, {
-            totalItems: 0,
-            totalAmount: 0
-        })
-        setTotalValues(totals)
-    }, [cart])
+    const getTotalQuantity = () => {
+        return cart.reduce((qty, item) => qty += item.quantity, 0)
+    }
+
+    const getTotalPrice = () => {
+        return cart.reduce((price, item) => price += item.current_price * item.quantity, 0)
+    }
 
     if(cart.length <= 0) {
         return (
@@ -42,7 +34,7 @@ const Cart = () => {
     return (
         <>
         <CartContainer>
-            <h1>Cart ({totalValues.totalItems} {cart.length <= 1 ? "item" : "items" })</h1>
+            <h1>Cart ({getTotalQuantity()} {cart.length <= 1 ? "item" : "items" })</h1>
             <p>Your order is eligible for free shipping (Lagos only, excluding large items) </p>
             
             <Table>
@@ -61,7 +53,7 @@ const Cart = () => {
             </Table>
 
             <TotalAmount>
-                <p>Total: <span> &#8358; {totalValues.totalAmount} </span> </p>
+                <p>Total: <span> &#8358; {getTotalPrice().toLocaleString()} </span> </p>
 
                 <div>
                     <p>Your order is eligible for free shipping (Lagos only, excluding large items)</p>

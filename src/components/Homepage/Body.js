@@ -1,16 +1,19 @@
+import {useEffect} from 'react'
+import {useSelector, useDispatch} from 'react-redux'
 import styled from 'styled-components'
 import Banner from './Banner'
 import ExtendedLinks from './ExtendedLinks'
 import SideNav from './SideNav'
 import TopProducts from './TopProducts'
-
-// import { topProducts, topDeals }  from '../../data'
-
-import {useAppContext} from '../../context'
+import {getAllProducts} from '../../redux/actions/productsActionCreators'
 
 const Body = () => {
+    const dispatch = useDispatch()
+    const {products, loading, error} = useSelector(state => state.products)
 
-    const {products} = useAppContext()
+    useEffect(() => {
+        dispatch(getAllProducts())
+    }, [dispatch])
 
     return (
         <BodyContainer>
@@ -22,13 +25,13 @@ const Body = () => {
            
             <ExtendedLinks />
 
-            <TopProducts colorCode={{bg: "white", text: "black" }} categoryHeading="Top selling items" productArray={products.topProducts} />
+            <TopProducts colorCode={{bg: "white", text: "black" }} categoryHeading="Top selling items" loading={loading} error={error} productArray={products?.slice(0,5)} />
 
             <AdBanner1>
                 <img src="https://ng.jumia.is/cms/Homepage/2021/w14/11CB-1152x252.jpg" alt="adveert"/>
             </AdBanner1>
 
-            <TopProducts colorCode={{bg: "darkred", text: "white" }} categoryHeading="Deals of the day | starting from &#8358; 1,000" productArray={products.topDeals}/>
+            <TopProducts colorCode={{bg: "darkred", text: "white" }} categoryHeading="Deals of the day | starting from &#8358; 1,000" loading={loading}  error={error} productArray={products?.slice(5,10)}/>
             
             <AdBanner2>
                 <img src="https://ng.jumia.is/cms/Homepage/2021/w07/Smartwatches_.jpg" alt="adveert"/>

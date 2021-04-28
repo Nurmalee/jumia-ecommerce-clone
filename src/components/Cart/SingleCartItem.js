@@ -1,51 +1,27 @@
-import {useState} from 'react'
-
+import {useState, useEffect} from 'react'
 import {Delete} from '@material-ui/icons'
-import {useAppContext} from '../../context'
 
-const SingleCartItem = ({ id, qty, name, desc, image, price, discount, eligibility_statement }) => {
+import {useDispatch} from 'react-redux'
+import {removeProductFromCart, increaseItemQuantity, decreaseItemQuantity} from '../../redux/actions/cartActionCreators'
 
-    const [quantity, setQuantity] = useState(qty)
-    const {removeItem, updateItemQuantity} = useAppContext()
-    const old_price = Number(price) + parseInt(Number(price) * Number(discount))
-    const subtotal = quantity * price
+const SingleCartItem = ({ id, quantity, name, desc, image, current_price, percentReduct, eligibility_statement }) => {
+    
+    const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     if(quantity >= 12){
-    //         setQuantity(12)
-    //     }
+    const [disabled, setDisabled] = useState(false)
 
-    //     if(quantity <= 1){
-    //         setQuantity(1)
-    //     }
+    const old_price = current_price + parseInt(current_price * percentReduct)
+    const subtotal = quantity * current_price
 
-    // }, [quantity])
+    useEffect(() => {
+        if(quantity > 1){
+            setDisabled(false)
+        }
 
-    // useEffect(() => {
-    //     updateItemQuantity(id, quantity)
-    // }, [id, quantity, updateItemQuantity])
-
-    const inputQuantityHandler = (e) => {
-        const input = e.target.value
-        setQuantity(input)
-        updateItemQuantity(id, input)
-    }
-
-    // const increaseQuantityHandler = () => {
-    //     setQuantity(quantity + 1)
-    //      if(quantity >= 12){
-    //         setQuantity(12)
-    //     }
-    //     updateItemQuantity(id, quantity)
-    // }
-
-    // const decreaseQuantityHandler = () => {
-    //     setQuantity(quantity - 1)
-    //     if(quantity <= 1){
-    //         setQuantity(1)
-    //     }
-    //     updateItemQuantity(id, quantity)
-    // }
+        if(quantity <= 1){
+            setDisabled(true)
+        }
+    }, [quantity])
 
     return (
         <tr>
@@ -56,20 +32,18 @@ const SingleCartItem = ({ id, qty, name, desc, image, price, discount, eligibili
                 <div>
                     <p>{desc}</p>
                     <p>{eligibility_statement}</p>
-                    <button onClick={() => removeItem(id)}> <Delete style={{fontSize: "17px", marginRight: "7px"}} /> remove</button>
+                    <button onClick={() => dispatch(removeProductFromCart(id))}> <Delete style={{fontSize: "17px", marginRight: "7px"}} /> remove</button>
                 </div>
             </td>
             <td>
-                {/* <button onClick={decreaseQuantityHandler}>-</button>
+                <button disabled={disabled} onClick={() => dispatch(decreaseItemQuantity(id))}>-</button>
                 {quantity}
-                <button onClick={increaseQuantityHandler}>+</button> */}
-                <input type="number" min={1} value={quantity} onChange={inputQuantityHandler} />
+                <button onClick={() => dispatch(increaseItemQuantity(id))}>+</button>
             </td>
             <td> 
-                <p> &#8358; {Number(price).toLocaleString()} </p>
+                <p> &#8358; {current_price.toLocaleString()} </p>
                 <p> &#8358; {old_price.toLocaleString()}</p>
-                {/* <p> Savings: &#8358; {parseInt(discount * old_price)} </p> */}
-                <p> Savings: &#8358; {(old_price - price).toLocaleString()} </p>
+                <p> Savings: &#8358; {(old_price - current_price).toLocaleString()} </p>
             </td>
             <td>  &#8358; {subtotal.toLocaleString()}</td>
         </tr>

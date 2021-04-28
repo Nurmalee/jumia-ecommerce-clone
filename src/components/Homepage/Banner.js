@@ -32,7 +32,7 @@ const Banner = () => {
     return (
         <BannerContainer>
             <div>
-                <p className="arrowRect"> <PlayCircleFilledIcon style={{fontSize: "45px"}} className="left" onClick={() => setImgIndex(imgIndex + 1)} /> </p>
+                <p className="arrowRect"> <PlayCircleFilledIcon style={{fontSize: "45px"}} className="left" onClick={() => setImgIndex(imgIndex - 1)} /> </p>
                 {
                     bannerList.map((img, index) => {
                         let position = "nextSlide"
@@ -50,7 +50,7 @@ const Banner = () => {
                         )
                     })
                 }
-                <p className="arrowRect"> <PlayCircleFilledIcon style={{fontSize: "45px"}} className="right" onClick={() => setImgIndex(imgIndex - 1)} /> </p>
+                <p className="arrowRect"> <PlayCircleFilledIcon style={{fontSize: "45px"}} className="right" onClick={() => setImgIndex(imgIndex + 1)} /> </p>
             </div>
 
             <SideBanner>

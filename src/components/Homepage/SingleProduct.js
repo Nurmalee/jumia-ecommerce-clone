@@ -1,25 +1,27 @@
 import styled from 'styled-components'
-
 import { Star } from '@material-ui/icons';
-import {useAppContext} from '../../context'
+import {useDispatch} from 'react-redux'
+import {addProductToCart} from '../../redux/actions/cartActionCreators'
 
 
-const SingleProduct = ({id, name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
+const SingleProduct = ({_id, name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
 
-    const {addItem} = useAppContext()
+    const dispatch = useDispatch()
+    // const {product} = useSelector(state => state.singleProduct)
 
-    const onAddToCart = () => {
-        const newProduct = {
-            id,
+    const handleAddToCart = () => {
+        const newItem = {
+            id: _id,
             name,
             desc,
             image,
-            price: current_price,
-            discount: percentReduct,
-            eligibility_statement 
+            current_price,
+            percentReduct,
+            eligibility_statement,
+            status,
         }
 
-        addItem(newProduct)
+        dispatch(addProductToCart(newItem))
     }
 
     return (
@@ -45,7 +47,7 @@ const SingleProduct = ({id, name, status, desc, image, current_price, percentRed
                 <p> {eligibility_statement} </p>
             </ExtraDetails>
 
-            <button onClick={onAddToCart}>add to cart</button>
+            <button onClick={handleAddToCart}>add to cart</button>
 
         </Product>
     )

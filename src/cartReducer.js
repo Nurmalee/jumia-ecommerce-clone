@@ -11,7 +11,7 @@ const cartReducer = (state, action) => {
             if(itemAlreadyInCart){
                 return {
                     ...state,
-                    cart: state.cart.map(item => item.id === action.payload.id ? {..item, qty: item.qty + 1})
+                    cart: state.cart.map(item => item.id === action.payload.id ? {..item, qty: item.qty + 1} : item)
                 }
             } else {
                 return {
@@ -39,7 +39,9 @@ const cartReducer = (state, action) => {
         }
 
         case ACTION.GET_TOTAL:
-            console.log("TOTAL AMOUNT")
+        return {
+            // console.log("TOTAL AMOUNT")
+        }
 
         case ACTION.CLEAR_CART:
         return {

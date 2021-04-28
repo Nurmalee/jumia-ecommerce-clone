@@ -87,6 +87,12 @@ export const bannerShuffle = [
     "https://ng.jumia.is/cms/Homepage/2021/w13/Mobile_Desktop.jpg", //DONT MISS A CALL
     "https://ng.jumia.is/cms/Homepage/2021/w13/26DB5C4C-B436-40B3-82DF-6D894E9A50B8.jpeg", //FLASH SALES
     "https://ng.jumia.is/cms/Homepage/2021/w14/Artboard_1.jpg", //TREND SPORTING
+    "https://ng.jumia.is/cms/Homepage/2021/w17/NG_PERNOD_ANCHOR_tease_Slider.jpg",
+    "https://ng.jumia.is/cms/Homepage/2021/w17/slider-(9).jpg",
+    "https://ng.jumia.is/cms/Homepage/2021/w17/NG_PRODUCTIVITY_PLUS_Slider.jpg",
+    "https://ng.jumia.is/cms/Homepage/2021/w17/NG_DIAGEO_Slider.jpg",
+    "https://ng.jumia.is/cms/Homepage/2021/w17/s-closet-upgrade.jpg"
+
 ]
 
 export const topProducts = [

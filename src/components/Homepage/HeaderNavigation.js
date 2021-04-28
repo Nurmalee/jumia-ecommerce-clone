@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+// import {useState, useEffect} from 'react'
 
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
@@ -12,33 +12,21 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import SmsOutlined from '@material-ui/icons/SmsOutlined';
 
 import { userSubmenu, helpSubmenu } from '../../data'
-import {useAppContext} from '../../context'
+import {useSelector} from 'react-redux'
 
 const HeaderNavigation = () => {
 
-    const {cart} = useAppContext()
-    const [cartItemCount, setCartItemCount] = useState(0)
+    const {cart} = useSelector(state => state.cart)
 
-    useEffect(() => {
-        // let currentCount = 0;
-        let currentCount = cart.reduce((totalCount, item) => {
-            totalCount += item.qty
-            return totalCount
-        }, 0)
-        
-        setCartItemCount(currentCount)
-
-    }, [cart])
+    const getTotalQuantity = () => {
+        return cart.reduce((qty, item) => qty += item.quantity, 0)
+    }
 
     return (
         <NavContainer>
             <TopBanner>
-                <img src="https://ng.jumia.is/cms/Homepage/2020/Top-strip/ts-cheaper-del.jpg" alt="Advert banner"/>
+                <img src="https://ng.jumia.is/cms/Homepage/2021/Topstrp/PernodRicard_BrandDay_TopStrip.gif" alt="Advert banner"/>
             </TopBanner>
-
-            {/* <TopBannerLinks>
-
-            </TopBannerLinks> */}
 
             <NavbarWrapper>
 
@@ -101,7 +89,7 @@ const HeaderNavigation = () => {
                                 <ShoppingCartOutlinedIcon style={{fontSize: "25px"}} />
                                 <h4>cart</h4>
                             </Link>
-                            {cart.length > 0 && <span>{cartItemCount}</span>}
+                            {cart.length > 0 && <span>{getTotalQuantity()}</span>}
                         </li>
                         
                     </NavbarRight>
@@ -139,13 +127,7 @@ const TopBanner = styled.div`
     @media screen and (max-width: 1200px) {
         width: 1000px;
     }
-`
-
-// const TopBannerLinks = styled.div`
-//     text-align: center;
-//     height: 30px;
-//     border: 1px solid;
-// `
+` 
 
 const NavbarWrapper = styled.div`
     background-color: white;
