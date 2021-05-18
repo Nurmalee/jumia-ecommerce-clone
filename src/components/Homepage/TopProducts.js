@@ -53,4 +53,8 @@ const PlaceholderContainer = styled.div`
     place-items: center;
     font-size: 25px;
     color: #444;
+
+    > img {
+        height: 77px;
+    }
 `

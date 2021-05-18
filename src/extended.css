@@ -1,11 +1,11 @@
 .nextSlide {
     transform: translateX(100%);
-    opacity: 0;
+    opacity: 0.5;
 }
 
 .prevSlide {
     transform: translateX(-100%);
-    opacity: 0;
+    opacity: 0.5;
 }
 
 .currentSlide {

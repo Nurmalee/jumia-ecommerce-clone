@@ -87,11 +87,10 @@ const BannerContainer = styled.div`
             height: 100%;
             width: 100%;
             border-radius: 5px;
-
             position: absolute;
             top: 0;
             left: 0;
-            transition: 1000ms;
+            transition: 500ms;
         }
 
         > p {

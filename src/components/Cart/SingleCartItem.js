@@ -10,14 +10,11 @@ const SingleCartItem = ({ id, quantity, name, desc, image, current_price, percen
 
     const [disabled, setDisabled] = useState(false)
 
-    const old_price = current_price + parseInt(current_price * percentReduct)
+    const old_price = parseInt(current_price * percentReduct) + current_price
     const subtotal = quantity * current_price
 
     useEffect(() => {
-        if(quantity > 1){
-            setDisabled(false)
-        }
-
+        setDisabled(false)
         if(quantity <= 1){
             setDisabled(true)
         }

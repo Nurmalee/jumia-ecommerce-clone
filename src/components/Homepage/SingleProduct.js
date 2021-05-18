@@ -4,14 +4,15 @@ import {useDispatch} from 'react-redux'
 import {addProductToCart} from '../../redux/actions/cartActionCreators'
 
 
-const SingleProduct = ({_id, name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
+const SingleProduct = ({id, name, status, desc, image, current_price, percentReduct, eligibility_statement}) => {
 
     const dispatch = useDispatch()
     // const {product} = useSelector(state => state.singleProduct)
 
     const handleAddToCart = () => {
         const newItem = {
-            id: _id,
+            // id: _id,
+            id,
             name,
             desc,
             image,
@@ -24,6 +25,8 @@ const SingleProduct = ({_id, name, status, desc, image, current_price, percentRe
         dispatch(addProductToCart(newItem))
     }
 
+    const old_price = parseInt(current_price * percentReduct) + current_price
+
     return (
         <Product>
 
@@ -31,12 +34,12 @@ const SingleProduct = ({_id, name, status, desc, image, current_price, percentRe
                 <img src={image} alt={name} />
             </ProductImage>
 
-            {status && <p style={{backgroundColor: status.abroad ? "blue" : "brown"}}> {status.state} </p>}
+            {status && <p style={{backgroundColor: status.abroad ? "darkBlue" : "brown"}}> {status.state} </p>}
 
             <ProductDetails>
                 <p> <b>{name ? name.toUpperCase() : null}</b> {desc} </p>
-                <h3> &#8358; {current_price} </h3>
-                <h4> &#8358; <span>{Number(current_price) + parseInt(Number(current_price) * Number(percentReduct))}</span> <span> -{parseInt(percentReduct * 100)}% </span> </h4>
+                <h3> &#8358; {current_price.toLocaleString()} </h3>
+                <h4> &#8358; <span>{old_price.toLocaleString()}</span> <span> -{parseInt(percentReduct * 100)}% </span> </h4>
 
                 <div>
                     <Star style={{fontSize: "16px"}}/> <Star style={{fontSize: "16px"}}/> <Star style={{fontSize: "16px"}}/> <Star style={{fontSize: "16px"}}/>
